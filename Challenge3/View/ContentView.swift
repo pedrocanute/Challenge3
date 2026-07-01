@@ -15,7 +15,6 @@ struct ContentView: View {
 			Tab ("Esportes", systemImage: "soccerball") {
 				NavigationStack{
 					Esportes()
-					
 				}
 			}
 			Tab ("Favoritos", systemImage: "star") {

@@ -12,6 +12,7 @@ struct Esportes: View {
 		VStack (spacing: 80){
 			Text("Esportes")
 				.font(.largeTitle)
+				.fontWeight(.semibold)
 				.frame(maxWidth: .infinity, alignment: .leading)
 				.padding(.leading, 24)
 				
