@@ -31,7 +31,7 @@ struct BotaoEsporte<Destino: View>: View {
 				}
 				.glassEffect(.regular.tint(cor).interactive())
 				Text(titulo)
-					.font(.system(size: 14))
+					.font(.custom("Play-Regular", size: 14))
 					.foregroundStyle(.white)
 					.multilineTextAlignment(.center)
 					.frame(maxWidth: 90)

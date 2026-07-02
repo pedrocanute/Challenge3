@@ -21,9 +21,9 @@ struct Futebol: View {
 					.preferredColorScheme(.dark)
 			}
 			Text("Futebol")
-				.font(.system(size: 24))
+				.font(.custom("Play-Regular" ,size: 24))
 				.padding(.bottom, 60)
-				.padding(.top, 20)
+				.padding(.top, 10)
 				.fontWeight(.semibold)
 			
 			BotaoLigas(icone: "globe.americas.fill", titulo: "Copa do Mundo 2026") { Jogos() }
