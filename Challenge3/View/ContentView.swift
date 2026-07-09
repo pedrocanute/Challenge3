@@ -12,7 +12,7 @@ import Playgrounds
 struct ContentView: View {
     var body: some View {
         TabView {
-			Tab ("Esportes", systemImage: "soccerball") {
+			Tab ("Esportes", systemImage: "soccerball.inverse") {
 				NavigationStack{
 					Esportes()
 				}
@@ -27,7 +27,7 @@ struct ContentView: View {
 				Perfil()
 			}
         }
-		.tabViewStyle(.automatic)
+		.tint(.corFutebol)
 		.preferredColorScheme(.dark)
 		
     }

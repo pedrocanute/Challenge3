@@ -15,7 +15,7 @@ struct Esportes: View {
 			
 			VStack (spacing: 80){
 				Text("Esportes")
-					.font(.custom("Play-Bold", size: 35))
+					.font(.custom("Play-Bold", size: 35, relativeTo: .largeTitle))
 					.frame(maxWidth: .infinity, alignment: .leading)
 					.padding(.leading, 24)
 				

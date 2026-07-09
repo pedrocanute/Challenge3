@@ -29,6 +29,16 @@ struct Jogos: View {
 				CardJogos(paisEsquerda: "Brasil", paisDireita: "Japão"){ Jogos()}
 					.padding(.horizontal, 12)
 			}
+			.toolbar {
+				ToolbarItem(placement: .topBarTrailing) {
+					Button {
+						
+					} label: {
+						Image(systemName: "bookmark")
+					}
+					
+				}
+			}
 		}
 	}
 }

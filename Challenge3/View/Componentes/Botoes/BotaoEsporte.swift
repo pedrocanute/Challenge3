@@ -28,7 +28,7 @@ struct BotaoEsporte<Destino: View>: View {
 //						.foregroundStyle(cor)
 					Image(systemName: icone)
 						.font(.system(size: 40))
-						.foregroundStyle(.black)
+						.foregroundStyle(.corFundo)
 				}
 				.glassEffect(.regular.tint(cor).interactive())
 				Text(titulo)
