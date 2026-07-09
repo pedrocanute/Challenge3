@@ -9,21 +9,26 @@ import SwiftUI
 
 struct Esportes: View {
 	var body: some View {
-		VStack (spacing: 80){
-			Text("Esportes")
-				.font(.custom("Play-Bold", size: 35))
-				.frame(maxWidth: .infinity, alignment: .leading)
-				.padding(.leading, 24)
+		ZStack{
+			Color.corFundo
+				.ignoresSafeArea()
+			
+			VStack (spacing: 80){
+				Text("Esportes")
+					.font(.custom("Play-Bold", size: 35))
+					.frame(maxWidth: .infinity, alignment: .leading)
+					.padding(.leading, 24)
 				
-			HStack (spacing: 40) {
-				ColunaEsquerdaEsporte()
-				ColunaCentroEsporte()
-					.offset(y:-45)
-				ColunaDireitaEsporte()
+				HStack (spacing: 40) {
+					ColunaEsquerdaEsporte()
+					ColunaCentroEsporte()
+						.offset(y:-45)
+					ColunaDireitaEsporte()
+				}
+				.frame (maxWidth: .infinity, alignment: .leading)
+				.padding(.leading, 24)
+				.preferredColorScheme(.dark)
 			}
-			.frame (maxWidth: .infinity, alignment: .leading)
-			.padding(.leading, 24)
-			.preferredColorScheme(.dark)
 		}
 	}
 }

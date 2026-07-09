@@ -9,7 +9,11 @@ import SwiftUI
 
 struct Favoritos: View {
 	var body: some View {
-		Text("Teste")
+		ZStack{
+			Color.corFundo
+				.ignoresSafeArea()
+			Text("Teste")
+		}
 	}
 }
 #Preview {

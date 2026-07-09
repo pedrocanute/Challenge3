@@ -9,7 +9,11 @@ import SwiftUI
 struct BotaoLigas<Destino: View>:View {
 	let icone: String
 	let titulo: String
+	var largura: CGFloat = 40
+	var altura: CGFloat = 40
 	let destino: () -> Destino
+	
+	@State var ativarHaptic = false
 	
 	var body: some View {
 		NavigationLink {
@@ -26,9 +30,10 @@ struct BotaoLigas<Destino: View>:View {
 						Circle()
 							.frame(width: 61, height: 59)
 							.foregroundStyle(.white)
-						Image(systemName: icone)
-							.font(.system(size: 35))
-							.foregroundStyle(.black)
+						Image(icone)
+							.resizable()
+							.scaledToFit()
+							.frame(width: largura, height: altura)
 					}
 					
 					Text(titulo)
@@ -41,9 +46,16 @@ struct BotaoLigas<Destino: View>:View {
 				
 			}
 		}
+		.simultaneousGesture(
+			TapGesture().onEnded {
+				ativarHaptic.toggle()
+			}
+		)
+		.sensoryFeedback(.selection, trigger: ativarHaptic)
 		.buttonStyle(.plain)
+		
 	}
 }
 #Preview {
-	BotaoLigas(icone: "globe.americas.fill", titulo: "Copa do Mundo 2026") { Jogos()}
+	BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026", largura: 40, altura: 40) { Jogos()}
 }

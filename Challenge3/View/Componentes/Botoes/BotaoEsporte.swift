@@ -14,6 +14,7 @@ struct BotaoEsporte<Destino: View>: View {
 	let cor: Color
 	let destino: () -> Destino
 	
+	@State var ativarHaptic = false
 		
 	var body: some View {
 		NavigationLink{
@@ -37,7 +38,12 @@ struct BotaoEsporte<Destino: View>: View {
 					.frame(maxWidth: 90)
 			}
 		}
-		.preferredColorScheme(.dark)
+		.simultaneousGesture(
+			TapGesture().onEnded {
+				ativarHaptic.toggle()
+			}
+		)
+		.sensoryFeedback(.selection, trigger: ativarHaptic)
 		.buttonStyle(.plain)
 	}
 }
