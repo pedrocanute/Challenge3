@@ -35,6 +35,7 @@ struct Jogos: View {
 						
 					} label: {
 						Image(systemName: "bookmark")
+							.foregroundStyle(.white)
 					}
 					
 				}
