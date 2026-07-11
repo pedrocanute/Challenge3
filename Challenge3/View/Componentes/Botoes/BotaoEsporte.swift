@@ -25,12 +25,13 @@ struct BotaoEsporte<Destino: View>: View {
 				ZStack {
 					Circle()
 						.frame(maxWidth: 90, maxHeight: 90)
-//						.foregroundStyle(cor)
+						.foregroundStyle(cor)
 					Image(systemName: icone)
 						.font(.system(size: 40))
 						.foregroundStyle(.corFundo)
 				}
 				.glassEffect(.regular.tint(cor).interactive())
+				
 				Text(titulo)
 					.font(.custom("Play-Regular", size: 14))
 					.foregroundStyle(.white)

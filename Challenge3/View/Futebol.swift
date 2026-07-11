@@ -13,21 +13,9 @@ struct Futebol: View {
 				.ignoresSafeArea()
 			
 			VStack{
-				ZStack{
-					Circle()
-						.frame(maxWidth: .infinity, alignment: .center)
-						.frame(width: 90, height: 90)
-						.foregroundStyle(.white)
-					Image(systemName: "soccerball.inverse")
-						.font(.system(size:40))
-						.foregroundStyle(.black)
-						.preferredColorScheme(.dark)
-				}
-				Text("Futebol")
-					.font(.custom("Play-Regular" ,size: 24))
-					.padding(.bottom, 60)
-					.padding(.top, 10)
-					.fontWeight(.semibold)
+				
+				IconeCategoria(nomeIcone: "soccerball.inverse", titulo: "Futebol")
+					.padding(.bottom, 70)
 				
 				BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026") { Jogos() }
 				BotaoLigas(icone: "trofeu", titulo: "Ligas e Torneios", largura: 30, altura: 30) { Jogos() }
