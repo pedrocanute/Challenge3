@@ -16,7 +16,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "000000000000000100000000"
-               BuildableName = "Challenge3.app"
+               BuildableName = "ScoreNow.app"
+               BlueprintName = "ScoreNow"
                ReferencedContainer = "container:ScoreNow.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,7 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "000000000000000100000000"
-            BuildableName = "Challenge3.app"
+            BuildableName = "ScoreNow.app"
+            BlueprintName = "ScoreNow"
             ReferencedContainer = "container:ScoreNow.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,7 +63,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "000000000000000100000000"
-            BuildableName = "Challenge3.app"
+            BuildableName = "ScoreNow.app"
+            BlueprintName = "ScoreNow"
             ReferencedContainer = "container:ScoreNow.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

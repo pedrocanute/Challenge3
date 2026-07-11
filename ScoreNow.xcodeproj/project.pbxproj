@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		000000000000000000000120 /* Challenge3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Challenge3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		000000000000000000000120 /* ScoreNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoreNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E1F6AF462FF70B36007DD399 /* Exceptions for "Challenge3" folder in "Challenge3" target */ = {
+		E1F6AF462FF70B36007DD399 /* Exceptions for "Challenge3" folder in "ScoreNow" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 000000000000000100000000 /* Challenge3 */;
+			target = 000000000000000100000000 /* ScoreNow */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -24,7 +24,7 @@
 		000000000000000000000010 /* Challenge3 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				E1F6AF462FF70B36007DD399 /* Exceptions for "Challenge3" folder in "Challenge3" target */,
+				E1F6AF462FF70B36007DD399 /* Exceptions for "Challenge3" folder in "ScoreNow" target */,
 			);
 			path = Challenge3;
 			sourceTree = "<group>";
@@ -51,7 +51,7 @@
 		000000000000000000000020 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				000000000000000000000120 /* Challenge3.app */,
+				000000000000000000000120 /* ScoreNow.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -59,9 +59,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		000000000000000100000000 /* Challenge3 */ = {
+		000000000000000100000000 /* ScoreNow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 000000000000000110000000 /* Build configuration list for PBXNativeTarget "Challenge3" */;
+			buildConfigurationList = 000000000000000110000000 /* Build configuration list for PBXNativeTarget "ScoreNow" */;
 			buildPhases = (
 				000000000000000120000000 /* Sources */,
 				000000000000000130000000 /* Frameworks */,
@@ -72,9 +72,9 @@
 			fileSystemSynchronizedGroups = (
 				000000000000000000000010 /* Challenge3 */,
 			);
-			name = Challenge3;
+			name = ScoreNow;
 			productName = MyApp;
-			productReference = 000000000000000000000120 /* Challenge3.app */;
+			productReference = 000000000000000000000120 /* ScoreNow.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -106,7 +106,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				000000000000000100000000 /* Challenge3 */,
+				000000000000000100000000 /* ScoreNow */,
 			);
 		};
 /* End PBXProject section */
@@ -260,7 +260,7 @@
 			};
 			name = Release;
 		};
-		000000000000000111000000 /* Debug configuration for PBXNativeTarget "Challenge3" */ = {
+		000000000000000111000000 /* Debug configuration for PBXNativeTarget "ScoreNow" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -271,6 +271,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Challenge3/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScoreNow;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -305,7 +306,7 @@
 			};
 			name = Debug;
 		};
-		000000000000000112000000 /* Release configuration for PBXNativeTarget "Challenge3" */ = {
+		000000000000000112000000 /* Release configuration for PBXNativeTarget "ScoreNow" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -316,6 +317,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Challenge3/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ScoreNow;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -361,11 +363,11 @@
 			);
 			defaultConfigurationName = Release;
 		};
-		000000000000000110000000 /* Build configuration list for PBXNativeTarget "Challenge3" */ = {
+		000000000000000110000000 /* Build configuration list for PBXNativeTarget "ScoreNow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				000000000000000111000000 /* Debug configuration for PBXNativeTarget "Challenge3" */,
-				000000000000000112000000 /* Release configuration for PBXNativeTarget "Challenge3" */,
+				000000000000000111000000 /* Debug configuration for PBXNativeTarget "ScoreNow" */,
+				000000000000000112000000 /* Release configuration for PBXNativeTarget "ScoreNow" */,
 			);
 			defaultConfigurationName = Release;
 		};
