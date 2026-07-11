@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct CardJogos<Destino: View>:View {
+	var aoVivo: Bool = false
+	let titulo: String
 	let paisEsquerda: String
 	let paisDireita: String
+	var horario: String = "16:00"
 	let destino: () -> Destino
 	
 	@State var ativarHaptic = false
@@ -21,26 +24,43 @@ struct CardJogos<Destino: View>:View {
 			
 			ZStack (alignment: .trailing){
 				VStack{
-					Text("Dezesseis avos de final")
-						.font(.subheadline)
+					Text(titulo)
+						.font(.caption)
 						.foregroundStyle(.corSubtitulo)
-						.padding(.bottom, 2)
+						.padding(.top, 8)
 					
-					HStack(spacing: 25){
+					HStack(spacing: 15){
 						Bandeira(nomeSelecao: paisEsquerda)
 						Divider()
-							.frame(width: 1, height: 73)
+							.frame(width: 1, height: 90)
 							.background(.corLinha)
-						Text("2 x 1")
-							.font(.largeTitle)
-							.fontWeight(.heavy)
+						Group {
+							
+							if aoVivo {
+								
+								VStack{
+									Text("2 x 1")
+										.font(.largeTitle)
+										.fontWeight(.heavy)
+										.foregroundStyle(.white)
+									Relogio(segundosIniciais: 1542)
+									
+								}
+							} else {
+								Text(horario)
+									.foregroundStyle(.white)
+								
+							}
+						}
+						.frame(width: 90, height: 90)
+						
 						Divider()
-							.frame(width: 1, height: 73)
+							.frame(width: 1, height: 90)
 							.background(.corLinha)
 						Bandeira(nomeSelecao: paisDireita)
 						
 					}
-					.padding(.bottom, 5)
+					.padding(.vertical, 5)
 				}
 				.frame(maxWidth: .infinity)
 				Image(systemName: "chevron.compact.right")
@@ -48,9 +68,12 @@ struct CardJogos<Destino: View>:View {
 					.foregroundStyle(.corLinha)
 					.padding(.trailing, 10)
 			}
-			.frame(maxWidth: .infinity, maxHeight: 130)
+			.frame(maxWidth: .infinity)
+			.frame(height: 140)
 			.background(.corCard)
 			.clipShape(RoundedRectangle(cornerRadius: 20))
+			.shadow(color: .black.opacity(0.45), radius: 2, x: 0, y: 3)
+			.padding(.bottom, 6)
 		}
 		.simultaneousGesture(
 			TapGesture().onEnded {
@@ -62,5 +85,5 @@ struct CardJogos<Destino: View>:View {
 	}
 }
 #Preview {
-	CardJogos(paisEsquerda: "Brasil", paisDireita: "Japão") { Jogos()}
+	CardJogos(aoVivo: true, titulo: "Dezesseis avos de final", paisEsquerda: "Costa do Marfim", paisDireita: "Japão", horario: "20:00") { Copa()}
 }

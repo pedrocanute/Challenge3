@@ -10,19 +10,31 @@ import SwiftUI
 struct IconeCategoria: View {
 	let nomeIcone: String
 	let titulo: String
+	var tamanho: CGFloat = 40
+	var personalizado: Bool = false
 	
 	var body: some View {
 		VStack {
 			Circle()
-				.frame(maxWidth: 108, maxHeight: 107)
+				.frame(width: 108, height: 107)
 				.foregroundStyle(.corFutebol)
-				.overlay(
-					Image(systemName: "soccerball.inverse")
-						.font(.system(size: 48))
-						.foregroundStyle(.corFundo)
-				)
+				.overlay {
+					if personalizado {
+						Image(nomeIcone)
+							.resizable()
+							.scaledToFit()
+							.frame(width: tamanho, height: tamanho)
+							.foregroundStyle(.corFundo)
+					} else {
+			
+						Image(systemName: nomeIcone)
+							.font(.system(size: 48))
+							.foregroundStyle(.corFundo)
+					}
+				}
+			
 			Text(titulo)
-				.font(.custom("Play-Regular", size: 24, relativeTo: .title))
+				.font(.custom("Play-Bold", size: 24, relativeTo: .title))
 				.foregroundStyle(.white)
 				.padding(.top, 10)
 			
@@ -30,5 +42,5 @@ struct IconeCategoria: View {
 	}
 }
 #Preview {
-	IconeCategoria(nomeIcone: "soccerball.inverse", titulo: "Futebol")
+	IconeCategoria(nomeIcone: "taça", titulo: "Copa do Mundo",tamanho: 65, personalizado: true)
 }

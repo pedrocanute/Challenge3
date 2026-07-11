@@ -17,9 +17,9 @@ struct Futebol: View {
 				IconeCategoria(nomeIcone: "soccerball.inverse", titulo: "Futebol")
 					.padding(.bottom, 70)
 				
-				BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026") { Jogos() }
-				BotaoLigas(icone: "trofeu", titulo: "Ligas e Torneios", largura: 30, altura: 30) { Jogos() }
-				BotaoLigas(icone: "brasao", titulo: "Times", largura: 30, altura: 30) { Jogos() }
+				BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026") { Copa() }
+				BotaoLigas(icone: "trofeu", titulo: "Ligas e Torneios", tamanho: 30) { Copa() }
+				BotaoLigas(icone: "brasao", titulo: "Times", tamanho: 30) { Copa() }
 				Spacer()
 			}
 		}

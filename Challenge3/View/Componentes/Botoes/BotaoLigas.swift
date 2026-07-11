@@ -9,8 +9,8 @@ import SwiftUI
 struct BotaoLigas<Destino: View>:View {
 	let icone: String
 	let titulo: String
-	var largura: CGFloat = 40
-	var altura: CGFloat = 40
+	var tamanho: CGFloat = 40
+	var corFundo: Color = .corFutebol
 	let destino: () -> Destino
 	
 	@State var ativarHaptic = false
@@ -29,11 +29,11 @@ struct BotaoLigas<Destino: View>:View {
 					ZStack{
 						Circle()
 							.frame(width: 61, height: 59)
-							.foregroundStyle(.white)
+							.foregroundStyle(corFundo)
 						Image(icone)
 							.resizable()
 							.scaledToFit()
-							.frame(width: largura, height: altura)
+							.frame(width: tamanho, height: tamanho)
 					}
 					
 					Text(titulo)
@@ -57,5 +57,5 @@ struct BotaoLigas<Destino: View>:View {
 	}
 }
 #Preview {
-	BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026", largura: 40, altura: 40) { Jogos()}
+	BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026", tamanho: 40) { Copa()}
 }

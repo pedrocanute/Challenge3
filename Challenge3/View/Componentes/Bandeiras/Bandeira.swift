@@ -10,25 +10,25 @@ import SwiftUI
 struct Bandeira: View {
 	let nomeSelecao: String
 	var body: some View {
-		VStack{
+		VStack(spacing: 4){
 			
-			Circle()
-				.foregroundStyle(.clear)
+			Image(nomeSelecao)
+				.resizable()
+				.scaledToFill()
 				.frame(width: 50, height: 50)
-				.background(
-					Image(nomeSelecao)
-						.resizable()
-						.aspectRatio(contentMode: .fill)
-						.clipped()
-				)
-				.cornerRadius(100)
+				.clipShape(Circle())
+			
 			Text(nomeSelecao)
 				.font(.footnote)
 				.foregroundStyle(.white)
+				.multilineTextAlignment(.center)
+				.lineLimit(2)
+				.frame(width: 90, height: 34, alignment: .top)
 		}
-			
+		.frame(width: 70, height: 90)
+		.padding(.top, 10)
 	}
 }
 #Preview {
-	Bandeira(nomeSelecao: "Brasil")
+	Bandeira(nomeSelecao: "Costa do Marfim")
 }

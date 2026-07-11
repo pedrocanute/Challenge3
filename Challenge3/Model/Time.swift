@@ -11,4 +11,6 @@ struct Time: Identifiable {
 	let id = UUID()
 	let nome: String
 	let escudo: String
+	let ordemOriginal: Int
+	var favorito: Bool = false
 }
