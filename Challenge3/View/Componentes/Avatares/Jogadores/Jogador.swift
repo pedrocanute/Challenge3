@@ -18,18 +18,19 @@ struct Jogador: View {
 				.background(corFundo)
 				.clipShape(Circle())
 				.frame(width: 34, height: 34)
+				.overlay(alignment: .topLeading) {
+					Text(numeroCamisa)
+						.font(.subheadline)
+						.foregroundStyle(.white)
+						.offset(x: -18)
+				}
 			Text(nomeJogador)
 				.font(.footnote)
 				.foregroundStyle(.white)
 			
 		}
-		.overlay(alignment: .topLeading) {
-			Text(numeroCamisa)
-				.font(.subheadline)
-				.foregroundStyle(.white)
-		}
 	}
 }
 #Preview {
-	Jogador(nomeJogador: "G. Magalhães", numeroCamisa: "3", corFundo: .corVerdeBrasil)
+	Jogador(nomeJogador: "Gabriel", numeroCamisa: "3", corFundo: .corVerdeBrasil)
 }
