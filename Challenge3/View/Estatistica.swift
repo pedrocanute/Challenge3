@@ -39,7 +39,7 @@ struct Estatistica: View {
 						case 0:
 							ResumoPartida()
 						case 1:
-							EscalacaoBrasil()
+							Escalacao()
 						default:
 							ResumoPartida()
 						}
