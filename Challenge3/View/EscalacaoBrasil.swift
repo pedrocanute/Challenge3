@@ -98,7 +98,7 @@ struct EscalacaoBrasil: View {
 				.accessibilityAddTraits(.isHeader)
 			
 			ForEach(jogadores, id: \.numero) { jogador in
-				HStack(alignment: .firstTextBaseline, spacing: 12) {
+				HStack(alignment: .firstTextBaseline) {
 					Text(jogador.numero)
 						.font(.headline)
 						.frame(minWidth: 40, alignment: .leading)

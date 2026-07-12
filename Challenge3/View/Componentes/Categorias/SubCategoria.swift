@@ -30,7 +30,7 @@ struct SubCategoria: View {
 			Divider()
 				.frame(height: 1)
 				.background(.corLinha)
-				.padding(.horizontal, 24)
+				
 				
 		}
 		.padding(.top, 14)
