@@ -56,7 +56,7 @@ struct BarraPosse: View {
 					.font(.title3)
 			}
 			.foregroundStyle(.white)
-			.padding(.horizontal, 14)
+			.padding(.horizontal, 24)
 		}
 		.frame(height: 45)
 	}

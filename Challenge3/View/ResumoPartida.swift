@@ -34,7 +34,7 @@ struct ResumoPartida: View {
 				
 				LinhaEstatistica(dadoEsquerdo: "2", titulo: "Cartões amarelos", dadoDireito: "3")
 			}
-			.padding(.horizontal,2)
+			.padding(.horizontal,12)
 		}
 	}
 }
