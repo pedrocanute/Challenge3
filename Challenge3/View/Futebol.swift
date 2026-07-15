@@ -14,12 +14,12 @@ struct Futebol: View {
 			
 			VStack{
 				
-				IconeCategoria(nomeIcone: "soccerball.inverse", titulo: "Futebol")
+				IconeCategoria(nomeIcone: "Futebol", titulo: "Futebol")
 					.padding(.bottom, 70)
 				
 				BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026") { Copa() }
-				BotaoLigas(icone: "trofeu", titulo: "Ligas e Torneios", tamanho: 30) { Copa() }
-				BotaoLigas(icone: "brasao", titulo: "Times", tamanho: 30) { Copa() }
+				BotaoLigas(icone: "Torneio", titulo: "Ligas e Torneios", tamanho: 30) { Copa() }
+				BotaoLigas(icone: "Times", titulo: "Times", tamanho: 30) { Copa() }
 				Spacer()
 			}
 		}

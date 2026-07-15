@@ -18,7 +18,7 @@ struct Copa: View {
 			ScrollView {
 				VStack{
 					
-					IconeCategoria(nomeIcone: "taça", titulo: "Copa do Mundo 2026", tamanho: 60, personalizado: true)
+					IconeCategoria(nomeIcone: "taça", titulo: "Copa do Mundo 2026", tamanho: 60)
 					
 					Button {
 						
@@ -33,11 +33,13 @@ struct Copa: View {
 					.buttonStyle(.glass)
 					
 					SubCategoria(titulo: "Ao Vivo")
+						.padding(.horizontal, 24)
 					
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: true, paisEsquerda: "Brasil", paisDireita: "Japão"){ Estatistica()}
 						.padding(.horizontal, 24)
 					
 					SubCategoria(titulo: "Ainda hoje")
+						.padding(.horizontal, 24)
 					
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Espanha", paisDireita: "Áustria"){ Copa()}
 						.padding(.horizontal, 24)
@@ -45,6 +47,7 @@ struct Copa: View {
 						.padding(.horizontal, 24)
 					
 					SubCategoria(titulo: "Amanhã")
+						.padding(.horizontal, 24)
 					
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Costa do Marfim", paisDireita: "Noruega", horario: "14:00"){ Copa()}
 						.padding(.horizontal, 24)

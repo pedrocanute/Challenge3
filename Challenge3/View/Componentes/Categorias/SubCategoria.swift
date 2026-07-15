@@ -25,7 +25,7 @@ struct SubCategoria: View {
 				.font(fonte)
 				.foregroundStyle(ehSubtitulo ? Color.corSubtitulo : Color.white)
 				.frame(maxWidth: .infinity, alignment: .leading)
-				.padding(.leading, 24)
+				
 			
 			Divider()
 				.frame(height: 1)
