@@ -19,7 +19,9 @@ struct ContentView: View {
 				}
 			}
 			Tab ("Favoritos", image: "favoritos") {
-				Favoritos()
+				NavigationStack{
+					Favoritos()
+				}
 			}
 			Tab ("Notícias", image: "news") {
 				Noticias()
