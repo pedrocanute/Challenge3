@@ -41,21 +41,21 @@ struct Copa: View {
 					SubCategoria(titulo: "Ainda hoje")
 						.padding(.horizontal, 24)
 					
-					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Espanha", paisDireita: "Áustria"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Espanha", paisDireita: "Áustria"){ Construcao()}
 						.padding(.horizontal, 24)
-					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Portugal", paisDireita: "Croácia", horario: "20:00"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Portugal", paisDireita: "Croácia", horario: "20:00"){ Construcao()}
 						.padding(.horizontal, 24)
 					
 					SubCategoria(titulo: "Amanhã")
 						.padding(.horizontal, 24)
 					
-					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Costa do Marfim", paisDireita: "Noruega", horario: "14:00"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Costa do Marfim", paisDireita: "Noruega", horario: "14:00"){ Construcao()}
 						.padding(.horizontal, 24)
 					
-					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "França", paisDireita: "Suécia", horario: "16:00"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "França", paisDireita: "Suécia", horario: "16:00"){ Construcao()}
 						.padding(.horizontal, 24)
 					
-					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "México", paisDireita: "Equador", horario: "20:00"){ Copa()}
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "México", paisDireita: "Equador", horario: "20:00"){ Construcao()}
 						.padding(.horizontal, 24)
 				}
 			}

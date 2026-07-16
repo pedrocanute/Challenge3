@@ -14,6 +14,7 @@ struct CardJogos<Destino: View>: View {
 	let paisEsquerda: String
 	let paisDireita: String
 	var horario: String = "16:00"
+	var finalizada: Bool = false
 
 	let destino: () -> Destino
 
@@ -62,7 +63,7 @@ struct CardJogos<Destino: View>: View {
 					.foregroundStyle(.corSubtitulo)
 					.padding(.top, 8)
 
-				DadoPartida(aoVivo: aoVivo, paisEsquerda: paisEsquerda, paisDireita: paisDireita, horario: horario)
+				DadoPartida(aoVivo: aoVivo, paisEsquerda: paisEsquerda, paisDireita: paisDireita, horario: horario, finalizada: finalizada)
 			}
 			.frame(maxWidth: .infinity)
 

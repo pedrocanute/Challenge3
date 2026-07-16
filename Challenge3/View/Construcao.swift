@@ -33,18 +33,15 @@ struct Construcao: View {
 				
 				
 				
-				Text("Confira as telas disponíveis abaixo")
+				Text("Confira a tela disponível abaixo")
 					.font(.headline)
 					.frame(width: 250)
 					.multilineTextAlignment(.center)
 					.lineLimit(2)
 					.padding(.bottom, 40)
-				HStack(spacing: 80){
-					BotaoEsporte(titulo: "Futebol", icone: "soccerball.inverse", cor: .corFutebol) { Futebol()}
-					BotaoEsporte(titulo: "Corrida", icone: "flag.pattern.checkered", cor: .corLaranja01) { Futebol()}
-
-					
-				}
+				
+				BotaoEsporte(titulo: "Futebol", icone: "Futebol", cor: .corFutebol) { Futebol()}
+				
 			}
 		}
 		.simultaneousGesture(

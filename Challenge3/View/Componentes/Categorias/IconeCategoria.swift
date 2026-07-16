@@ -11,12 +11,13 @@ struct IconeCategoria: View {
 	let nomeIcone: String
 	let titulo: String
 	var tamanho: CGFloat = 55
+	var cor: Color = .corFutebol
 	
 	var body: some View {
 		VStack {
 			Circle()
 				.frame(width: 108, height: 107)
-				.foregroundStyle(.corFutebol)
+				.foregroundStyle(cor)
 				.overlay {
 				
 						Image(nomeIcone)

@@ -12,6 +12,7 @@ struct DadoPartida:View {
 	let paisEsquerda: String
 	let paisDireita: String
 	var horario: String = "16:00"
+	var finalizada: Bool = false
 	
 	var body: some View {
 		
@@ -33,8 +34,16 @@ struct DadoPartida:View {
 						
 					}
 				} else {
-					Text(horario)
-						.foregroundStyle(.white)
+					if finalizada {
+						Text("0 x 1")
+							.font(.largeTitle)
+							.fontWeight(.heavy)
+							.foregroundStyle(.white)
+					} else {
+						Text(horario)
+							.foregroundStyle(.white)
+						
+					}
 					
 				}
 			}

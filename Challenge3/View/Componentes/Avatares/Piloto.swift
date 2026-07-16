@@ -11,9 +11,11 @@ struct Piloto: View {
 	
 	let nomePiloto: String
 	var podio: Bool = false
+	var aoVivo: Bool = false
 	let posicao: String
 	var construtor: String = "Mercedes"
 	var tempo: String = "1:26:37,979"
+	var pais: String = "Reino Unido"
 	
 	let tamanhoPodio: CGFloat = 58
 	let tamanhoTabela: CGFloat = 29
@@ -46,21 +48,37 @@ struct Piloto: View {
 						
 					}
 				Group{
-					Text(nomePiloto)
-						.font(.headline)
-					Text(construtor)
-						.font(.footnote)
-					Text(tempo)
-						.font(.footnote)
+					if aoVivo {
+						
+						Text(nomePiloto)
+							.fontWeight(.semibold)
+						
+						Text(construtor)
+							.font(.caption2)
+							
+						Bandeira(nomeSelecao: pais, ehCorrida: true)
+					} else {
+						Text(nomePiloto)
+							
+						Text(construtor)
+
+							
+						Text(tempo)
+						
+						Bandeira(nomeSelecao: pais, ehCorrida: true)
+
+					}
 				}
+				.font(.footnote)
 				.foregroundStyle(.white)
+			
 			}
 		} else {
 			HStack {
 				Text(posicao)
-					.font(.headline)
+					.font(.subheadline)
 					.foregroundStyle(.white)
-					.padding(.trailing,17)
+					.padding(.trailing,10)
 				
 				Circle()
 					.foregroundStyle(.clear)
@@ -74,12 +92,12 @@ struct Piloto: View {
 					)
 					.cornerRadius(58)
 				Text(nomePiloto)
-					.font(.headline)
+					.font(.subheadline)
 					.foregroundStyle(.white)
 			}
 		}
 	}
 }
 #Preview {
-	Piloto(nomePiloto: "G. Russel", podio: true, posicao: "1", construtor: "Mercedes", tempo: "1:26:37,979")
+	Piloto(nomePiloto: "M. Verstappen", podio: true, aoVivo: false, posicao: "1", construtor: "Mercedes", tempo: "1:26:37,979")
 }
