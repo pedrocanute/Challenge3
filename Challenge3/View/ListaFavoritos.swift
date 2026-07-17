@@ -199,7 +199,6 @@ struct ListaFavoritos: View {
 				.font(.subheadline)
 				.symbolRenderingMode(.palette)
 				.foregroundStyle(
-					item.wrappedValue.favoritado ? .white : .secondary,
 					item.wrappedValue.favoritado ? .red : .secondary
 				)
 			}

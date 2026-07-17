@@ -92,6 +92,7 @@ struct CardEstatisticaCorrida: View {
 			.padding(.bottom, 20)
 			
 			SubCategoria(titulo: "Classificação do Campeonato", ehSubtitulo: false)
+				.padding(.bottom, 10)
 			
 			ZStack(alignment: .top) {
 				VStack(spacing: 8) {
