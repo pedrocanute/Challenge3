@@ -15,6 +15,7 @@ struct Escalacao: View {
 				.ignoresSafeArea()
 			VStack{
 				SubCategoria(titulo: "Escalação Oficial", ehSubtitulo: false)
+					.padding(.bottom, 10)
 				
 				Picker("Dados", selection: $selecao) {
 					Text("Brasil")
@@ -24,7 +25,7 @@ struct Escalacao: View {
 				}
 				.pickerStyle(.segmented)
 				.frame(width: 302)
-				.padding(.bottom, 26)
+				.padding(.bottom, 10)
 				
 				Group {
 					switch selecao {

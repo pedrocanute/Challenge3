@@ -44,7 +44,7 @@ struct Estatistica: View {
 							.tag(1)
 					}
 					.pickerStyle(.segmented)
-					.frame(maxWidth: dynamicTypeSize.isAccessibilitySize ? .infinity : 302)
+					.frame(maxWidth: .infinity)
 
 					Group {
 						switch selecao {

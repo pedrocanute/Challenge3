@@ -63,5 +63,8 @@ struct TabelaBancoBrasil: View {
 	}
 }
 #Preview {
-	TabelaBancoBrasil()
+	ScrollView{
+		
+		TabelaBancoBrasil()
+	}
 }

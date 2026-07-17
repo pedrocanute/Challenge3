@@ -58,7 +58,6 @@ struct CardEstatisticaCorrida: View {
 	var cardPadrao: some View {
 		
 		VStack {
-			SubCategoria(titulo: "Último Evento", ehSubtitulo: false)
 			
 			VStack {
 				Text("Grande Prêmio Áustria")
@@ -67,7 +66,7 @@ struct CardEstatisticaCorrida: View {
 				Text("71 voltas - Corrida encerrada")
 					.font(.footnote)
 			}
-			.frame(maxWidth: .infinity, alignment: .leading)
+			.padding(.top, 20)
 			.padding(.bottom, 20)
 			
 			HStack(spacing: 8) {
@@ -113,7 +112,7 @@ struct CardEstatisticaCorrida: View {
 						.frame(width: 80, alignment: .trailing)
 					
 					ColunaV(pilotos: pilotos)
-						.frame(width: 30, alignment: .trailing)
+						.frame(width: 30, alignment: .center)
 					
 					ColunaPTS(pilotos: pilotos)
 						.frame(width: 30, alignment: .trailing)

@@ -15,7 +15,7 @@ struct Futebol: View {
 			VStack{
 				
 				IconeCategoria(nomeIcone: "Futebol", titulo: "Futebol")
-					.padding(.bottom, 70)
+					.padding(.bottom, 55)
 				
 				BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026") { Copa() }
 				BotaoLigas(icone: "Torneio", titulo: "Ligas e Torneios", tamanho: 30) { Copa() }

@@ -16,6 +16,7 @@ struct Favoritos: View {
 		ZStack{
 			Color.corFundo
 				.ignoresSafeArea()
+			
 			ScrollView{
 				
 				VStack{

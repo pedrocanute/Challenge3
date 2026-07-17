@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AoVivo:View {
 	var body: some View {
+		
 		VStack(spacing: 16){
 			SubCategoria(titulo: "Futebol", ehSubtitulo: false)
 			

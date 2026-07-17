@@ -34,13 +34,14 @@ struct Copa: View {
 					
 					SubCategoria(titulo: "Ao Vivo")
 						.padding(.horizontal, 24)
+						.padding(.bottom, 8)
 					
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: true, paisEsquerda: "Brasil", paisDireita: "Japão"){ Estatistica()}
 						.padding(.horizontal, 24)
 					
 					SubCategoria(titulo: "Ainda hoje")
 						.padding(.horizontal, 24)
-					
+						.padding(.bottom, 8)
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Espanha", paisDireita: "Áustria"){ Construcao()}
 						.padding(.horizontal, 24)
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Portugal", paisDireita: "Croácia", horario: "20:00"){ Construcao()}
@@ -48,6 +49,7 @@ struct Copa: View {
 					
 					SubCategoria(titulo: "Amanhã")
 						.padding(.horizontal, 24)
+						.padding(.bottom, 8)
 					
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Costa do Marfim", paisDireita: "Noruega", horario: "14:00"){ Construcao()}
 						.padding(.horizontal, 24)

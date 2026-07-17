@@ -34,7 +34,7 @@ struct SubCategoria: View {
 				
 		}
 		.padding(.top, 14)
-		.padding(.bottom, 10)
+//		.padding(.bottom, 5)
 	}
 }
 #Preview {

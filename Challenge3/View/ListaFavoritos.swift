@@ -195,8 +195,8 @@ struct ListaFavoritos: View {
 			Button {
 				item.wrappedValue.favoritado.toggle()
 			} label: {
-				Image(systemName: item.wrappedValue.favoritado ? "heart.circle.fill" : "heart.circle")
-				.font(.title2)
+				Image(systemName: item.wrappedValue.favoritado ? "heart.fill" : "heart")
+				.font(.subheadline)
 				.symbolRenderingMode(.palette)
 				.foregroundStyle(
 					item.wrappedValue.favoritado ? .white : .secondary,

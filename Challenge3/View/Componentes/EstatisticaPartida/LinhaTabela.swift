@@ -30,7 +30,7 @@ struct LinhaTabela: View {
 				layoutPadrao
 			}
 		}
-		.padding(12)
+		.padding(5)
 		.frame(maxWidth: .infinity)
 		.background {
 			if temFundo {
@@ -59,7 +59,7 @@ struct LinhaTabela: View {
 			}
 		}
 		.font(.footnote)
-		.frame(minHeight: 42)
+		.frame(height: 42)
 	}
 
 	var layoutAcessivel: some View {

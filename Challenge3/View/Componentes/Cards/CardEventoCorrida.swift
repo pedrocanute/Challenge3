@@ -29,12 +29,10 @@ struct CardEventoCorrida: View {
 		
 		VStack {
 			
-			SubCategoria(titulo: "Próximos Eventos", ehSubtitulo: false)
-				.padding(.horizontal, 16)
 			
 			Group {
 				
-				VStack(alignment: .leading) {
+				VStack {
 					Text("Grande Prêmio - Grã-Bretanha")
 						.font(.headline)
 					
@@ -42,20 +40,21 @@ struct CardEventoCorrida: View {
 						.font(.footnote)
 						.foregroundStyle(.corSubtitulo)
 				}
+				.padding(.top, 8)
 				
 				linhaEvento(titulo: "Classificação do Sprint", data: "03", horario: "12:30", divisoria: true)
-				
 				linhaEvento(titulo: "Sprint", data: "04", horario: "08:00", divisoria: true)
 				
 				linhaEvento(titulo: "Classificação", data: "04", horario: "12:00", divisoria: true)
 				
 				linhaEvento(titulo: "Corrida", data: "05", horario: "11:00", divisoria: false)
+					.padding(.bottom, 8)
 				
 			}
 			.foregroundStyle(.white)
-			.frame(maxWidth: .infinity, alignment: .leading)
+			.frame(maxWidth: .infinity)
 			.padding(.horizontal, 16)
-			.padding(.bottom, 10)
+			.padding(.vertical, 8)
 		}
 	}
 	

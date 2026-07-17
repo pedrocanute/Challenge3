@@ -17,9 +17,12 @@ struct Formula1: View {
 				.ignoresSafeArea()
 			ScrollView {
 				
-				VStack(spacing: 20){
+				VStack(spacing: 15){
 					IconeCategoria(nomeIcone: "F1", titulo: "Fórmula 1",tamanho: 80, cor: .white)
+					SubCategoria(titulo: "Próximos Eventos", ehSubtitulo: false)
 					CardEventoCorrida()
+					
+					SubCategoria(titulo: "Último Evento", ehSubtitulo: false)
 					
 					CardEstatisticaCorrida()
 				}
@@ -33,7 +36,7 @@ struct Formula1: View {
 					favoritou.toggle()
 				} label: {
 					Image(systemName: favoritou ? "bookmark.fill" : "bookmark")
-						.foregroundStyle(favoritou ? Color.corLaranja02 : Color.white)
+						.foregroundStyle(favoritou ? Color.corFutebol : Color.white)
 				}
 			}
 		}
