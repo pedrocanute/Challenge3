@@ -14,7 +14,7 @@ struct ColunaEsquerdaEsporte: View {
 			BotaoEsporte(titulo: "Baseball", icone: "Baseball", cor: .corMMA) { Construcao() }
 				
 			BotaoEsporte(titulo: "Basquete", icone: "Basquete", cor: .corBasquete) { Construcao() }
-			BotaoEsporte(titulo: "Rugby", icone: "Rugbi", cor: .corFutebol) { Construcao() }
+			BotaoEsporte(titulo: "Futebol Americano", icone: "Americano", cor: .corFutebol) { Construcao() }
 			
 		}
 	}

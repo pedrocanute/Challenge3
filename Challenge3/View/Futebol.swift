@@ -25,7 +25,7 @@ struct Futebol: View {
 					
 					VStack(spacing: 11 ){
 						
-						BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026") { Copa() }
+						BotaoLigas(icone: "taça", titulo: "Copa do Mundo 2026", tamanho: 38) { Copa() }
 						
 						BotaoLigas(icone: "Torneio", titulo: "Ligas e Torneios", tamanho: tamanhoIconeDoBotao) { Copa() }
 						
