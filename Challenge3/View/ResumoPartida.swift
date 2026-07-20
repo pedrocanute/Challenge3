@@ -10,6 +10,7 @@ import SwiftUI
 struct ResumoPartida: View {
 	
 	@Environment(\.dynamicTypeSize) var dynamicTypeSize
+	let margemInterna: CGFloat = 12
 	
 	var body: some View {
 		
@@ -34,7 +35,7 @@ struct ResumoPartida: View {
 				
 				LinhaEstatistica(dadoEsquerdo: "2", titulo: "Cartões amarelos", dadoDireito: "3")
 			}
-			.padding(.horizontal,12)
+			.padding(.horizontal,margemInterna)
 		}
 	}
 }

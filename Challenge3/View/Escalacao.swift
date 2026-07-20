@@ -8,6 +8,8 @@ import SwiftUI
 
 struct Escalacao: View {
 	@State var selecao = 0
+	let tamanhoPicker: CGFloat = 302
+	let distanciaPickerAoConteudo: CGFloat = 10
 	
 	var body: some View {
 		ZStack{
@@ -24,8 +26,8 @@ struct Escalacao: View {
 						.tag(1)
 				}
 				.pickerStyle(.segmented)
-				.frame(width: 302)
-				.padding(.bottom, 10)
+				.frame(width: tamanhoPicker)
+				.padding(.bottom, distanciaPickerAoConteudo)
 				
 				Group {
 					switch selecao {
@@ -43,5 +45,7 @@ struct Escalacao: View {
 	}
 }
 #Preview {
-	Escalacao()
+	ScrollView{
+		Escalacao()
+	}
 }

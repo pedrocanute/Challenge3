@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Estatistica: View {
 
+	let fonteTitulo: CGFloat = 28
+	let margem: CGFloat = 24
 	@State var selecao = 0
 	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 
@@ -23,7 +25,7 @@ struct Estatistica: View {
 					VStack(spacing: 8){
 						
 						Text("Ao Vivo")
-							.font(.custom("Play-Bold", size: 28, relativeTo: .title))
+							.font(.custom("Play-Bold", size: fonteTitulo, relativeTo: .title))
 							.frame(maxWidth: .infinity, alignment: .leading)
 							.accessibilityAddTraits(.isHeader)
 						
@@ -59,7 +61,7 @@ struct Estatistica: View {
 						}
 					}
 				}
-				.padding(.horizontal, 24)
+				.padding(.horizontal, margem)
 				.padding(.vertical, 20)
 			}
 			.scrollEdgeEffectStyle(.soft, for: .top)
