@@ -8,59 +8,58 @@
 import SwiftUI
 
 struct Esportes: View {
-	@Environment(\.dynamicTypeSize) private var dynamicTypeSize
-
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
+	let fonteTitulo: CGFloat = 35
+	let margem: CGFloat = 24
+	let offsetColunaCentro: CGFloat = -45
+	
 	var body: some View {
 		ZStack {
 			Color.corFundo
 				.ignoresSafeArea()
-
-			if dynamicTypeSize.isAccessibilitySize {
-				ScrollView {
-					conteudo
-				}
-			} else {
+			
+			ScrollView {
 				conteudo
 			}
 		}
 	}
-
+	
 	var conteudo: some View {
-		VStack(spacing: 80) {
+		VStack(spacing: dynamicTypeSize.isAccessibilitySize ? 20 : 80) {
 			Text("Esportes")
-				.font(.custom("Play-Bold", size: 35, relativeTo: .largeTitle))
+				.font(.custom("Play-Bold", size: fonteTitulo, relativeTo: .largeTitle))
 				.frame(maxWidth: .infinity, alignment: .leading)
-				.padding(.leading, 24)
-
+				.padding(.horizontal, margem)
+			
 			if dynamicTypeSize.isAccessibilitySize {
 				layoutAcessivel
 			} else {
 				layoutPadrao
 			}
 		}
-		.padding(.vertical, 24)
+		.padding(.vertical, margem)
 	}
-
+	
 	var layoutPadrao: some View {
 		HStack(spacing: 40) {
 			ColunaEsquerdaEsporte()
-
+			
 			ColunaCentroEsporte()
-				.offset(y: -45)
-
+				.offset(y: offsetColunaCentro)
+			
 			ColunaDireitaEsporte()
 		}
 		.frame(maxWidth: .infinity, alignment: .leading)
-		.padding(.leading, 24)
+		.padding(.horizontal, margem)
 	}
-
+	
 	var layoutAcessivel: some View {
 		VStack(spacing: 16) {
 			ColunaCentroEsporte()
 			ColunaEsquerdaEsporte()
 			ColunaDireitaEsporte()
 		}
-		.padding(.horizontal, 24)
+		.padding(.horizontal, margem)
 	}
 }
 #Preview {
