@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Copa: View {
 	@State var favoritou: Bool = false
+	let margem: CGFloat = 24
+	let distanciaSubtituloAoCard: CGFloat = 8
 	
 	var body: some View {
 		ZStack{
@@ -33,33 +35,27 @@ struct Copa: View {
 					.buttonStyle(.glass)
 					
 					SubCategoria(titulo: "Ao Vivo")
-						.padding(.horizontal, 24)
-						.padding(.bottom, 8)
+						.padding(.bottom, distanciaSubtituloAoCard)
 					
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: true, paisEsquerda: "Brasil", paisDireita: "Japão"){ Estatistica()}
-						.padding(.horizontal, 24)
 					
 					SubCategoria(titulo: "Ainda hoje")
-						.padding(.horizontal, 24)
-						.padding(.bottom, 8)
-					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Espanha", paisDireita: "Áustria"){ Construcao()}
-						.padding(.horizontal, 24)
-					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Portugal", paisDireita: "Croácia", horario: "20:00"){ Construcao()}
-						.padding(.horizontal, 24)
+						.padding(.bottom, distanciaSubtituloAoCard)
 					
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Espanha", paisDireita: "Áustria"){ Construcao()}
+						
+					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Portugal", paisDireita: "Croácia", horario: "20:00"){ Construcao()}
+						
 					SubCategoria(titulo: "Amanhã")
-						.padding(.horizontal, 24)
-						.padding(.bottom, 8)
+						.padding(.bottom, distanciaSubtituloAoCard)
 					
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "Costa do Marfim", paisDireita: "Noruega", horario: "14:00"){ Construcao()}
-						.padding(.horizontal, 24)
-					
+						
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "França", paisDireita: "Suécia", horario: "16:00"){ Construcao()}
-						.padding(.horizontal, 24)
-					
+						
 					CardJogos(titulo: "Dezesseis avos de final", aoVivo: false, paisEsquerda: "México", paisDireita: "Equador", horario: "20:00"){ Construcao()}
-						.padding(.horizontal, 24)
 				}
+				.padding(.horizontal, margem)
 			}
 			.scrollEdgeEffectStyle(.soft, for: .top)
 		}
@@ -71,6 +67,8 @@ struct Copa: View {
 					Image(systemName: favoritou ?  "bookmark.fill" : "bookmark")
 						.foregroundStyle(favoritou ? Color.corVerdeLogo : Color.white)
 				}
+				.accessibilityLabel(favoritou ? "Remover dos Favoritos" : "Adicionar aos Favoritos")
+				.accessibilityValue(favoritou ? "Favoritado" : "Não favoritado")
 			}
 		}
 	}
