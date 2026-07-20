@@ -9,12 +9,13 @@ import SwiftUI
 struct BotaoFavoritar: View {
 	
 	let nomePais: String
+	var direita = true
 	
 	@State var favoritou: Bool = false
 	
 	var body: some View {
 		Bandeira(nomeSelecao: nomePais)
-			.overlay(alignment: .topTrailing) {
+			.overlay(alignment: direita ? .topTrailing : .topLeading) {
 				Button {
 					favoritou.toggle()
 				} label: {
@@ -27,10 +28,11 @@ struct BotaoFavoritar: View {
 							.foregroundStyle(favoritou ? Color.corLaranja02 : Color.corFundo)
 							.font(.system(size: 14))
 					}
-						
 				}
 				.glassEffect(.regular)
+	
 			}
+			
 	}
 }
 #Preview {

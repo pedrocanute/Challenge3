@@ -31,7 +31,7 @@ struct BotaoComInfo: View {
 
 	var layoutPadrao: some View {
 		HStack(spacing: 36) {
-			BotaoFavoritar(nomePais: paisEsquerda)
+			BotaoFavoritar(nomePais: paisEsquerda, direita: false)
 
 			placar
 

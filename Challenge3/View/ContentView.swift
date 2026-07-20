@@ -13,11 +13,14 @@ struct MyApp: App {
 struct ContentView: View {
 	
 	@State private var mostrarSplash = true
+	var opacidadeSplashScreen: Double { mostrarSplash ? 0 : 1 }
+	let tempoEspera: Double = 1.7
+	let tempoDeFade: Double = 0.7
 	
 	var body: some View {
 		ZStack {
 			telaPrincipal
-				.opacity(mostrarSplash ? 0 : 1)
+				.opacity(opacidadeSplashScreen)
 			
 			if mostrarSplash {
 				SplashScreen()
@@ -26,9 +29,9 @@ struct ContentView: View {
 			}
 		}
 		.task {
-			try? await Task.sleep(for: .seconds(1.7))
+			try? await Task.sleep(for: .seconds(tempoEspera))
 			
-			withAnimation(.easeInOut(duration: 0.7)) {
+			withAnimation(.easeInOut(duration: tempoDeFade)) {
 				mostrarSplash = false
 			}
 		}
