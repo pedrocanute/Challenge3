@@ -9,6 +9,9 @@ import SwiftUI
 
 struct Favoritos: View {
 	
+	let fonteTitulo: CGFloat = 28
+	let margem: CGFloat = 24
+	
 	@State var mostrarSheet = false
 	@State var selecao = 0
 	
@@ -21,7 +24,7 @@ struct Favoritos: View {
 				
 				VStack{
 					Text("Favoritos")
-						.font(.custom("Play-Bold", size:28, relativeTo: .title))
+						.font(.custom("Play-Bold", size: fonteTitulo, relativeTo: .title))
 						.frame(maxWidth: .infinity, alignment: .leading)
 					
 					Picker("Eventos", selection: $selecao) {
@@ -45,7 +48,7 @@ struct Favoritos: View {
 						AoVivo()
 					}
 				}
-				.padding(.horizontal, 24)
+				.padding(.horizontal, margem)
 			}
 			.scrollEdgeEffectStyle(.soft, for: .top)
 		}

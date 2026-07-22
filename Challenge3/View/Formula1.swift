@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct Formula1: View {
-	
+	let tamanhoIconeF1: CGFloat = 80
+	let margem: CGFloat = 24
 	@State var favoritou = false
 	
 	var body: some View {
@@ -18,7 +19,7 @@ struct Formula1: View {
 			ScrollView {
 				
 				VStack(spacing: 15){
-					IconeCategoria(nomeIcone: "F1", titulo: "Fórmula 1",tamanho: 80, cor: .white)
+					IconeCategoria(nomeIcone: "F1", titulo: "Fórmula 1",tamanho: tamanhoIconeF1, cor: .white)
 					SubCategoria(titulo: "Próximos Eventos", ehSubtitulo: false)
 					CardEventoCorrida()
 					
@@ -26,7 +27,7 @@ struct Formula1: View {
 					
 					CardEstatisticaCorrida()
 				}
-				.padding(.horizontal, 24)
+				.padding(.horizontal, margem)
 			}
 		}
 		.toolbar(.hidden, for: .tabBar)
