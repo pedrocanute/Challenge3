@@ -59,7 +59,7 @@ struct CardJogos<Destino: View>: View {
 		ZStack(alignment: .trailing) {
 			VStack {
 				Text(titulo)
-					.font(.caption)
+					.font(.subheadline)
 					.foregroundStyle(.corSubtitulo)
 					.padding(.top, 8)
 

@@ -9,6 +9,7 @@ import SwiftUI
 struct CardCorrida<Destino: View>: View {
 	
 	let destino: () -> Destino
+	let alturaDivisoria: CGFloat = 125
 	
 	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 	@State var ativarHaptic = false
@@ -25,14 +26,10 @@ struct CardCorrida<Destino: View>: View {
 				}
 			}
 			.frame(maxWidth: .infinity)
+			.padding(12)
 			.background(.corCard)
 			.clipShape(RoundedRectangle(cornerRadius: 20))
-			.shadow(
-				color: .black.opacity(0.45),
-				radius: 2,
-				x: 0,
-				y: 3
-			)
+			.shadow(color: .black.opacity(0.45), radius: 2, x: 0, y: 3)
 			.padding(.bottom, 12)
 		}
 		.simultaneousGesture(
@@ -43,17 +40,8 @@ struct CardCorrida<Destino: View>: View {
 		.sensoryFeedback(.selection, trigger: ativarHaptic)
 		.buttonStyle(.plain)
 		.accessibilityElement(children: .combine)
-		.accessibilityLabel(
-   """
-   Grande Prêmio da Áustria. Corrida ao vivo, volta 26 de 71. \
-   Primeiro lugar, G. Russel, Mercedes. \
-   Segundo lugar, M. Verstappen, Red Bull Racing. \
-   Terceiro lugar, K. Antonelli, Mercedes.
-   """
-		)
-		.accessibilityHint(
-			"Toque duas vezes para ver os detalhes da corrida"
-		)
+		.accessibilityLabel("Grande Prêmio da Áustria. Corrida ao vivo, volta 26 de 71.Primeiro lugar, G. Russel, Mercedes. Segundo lugar, M. Verstappen, Red Bull Racing. Terceiro lugar, K. Antonelli, Mercedes.")
+		.accessibilityHint("Toque duas vezes para ver os detalhes da corrida")
 	}
 	
 	var cardPadrao: some View {
@@ -61,39 +49,38 @@ struct CardCorrida<Destino: View>: View {
 			VStack(spacing: 25) {
 				Text("Grande Prêmio - Áustria")
 					.font(.subheadline)
-					.padding(.top, 12)
 				
-				HStack(spacing: 8) {
+				HStack(spacing: 16) {
 					Piloto(nomePiloto: "G. Russel", podio: true, aoVivo: true, posicao: "1")
 						.frame(maxWidth: .infinity)
-						.padding(.leading, 16)
+						.fixedSize(horizontal: true, vertical: false)
 					
 					Divider()
-						.frame(width: 1, height: 125)
+						.frame(width: 1, height: alturaDivisoria)
 						.background(.corLinha)
 					
 					Piloto(nomePiloto: "M. Verstappen", podio: true, aoVivo: true, posicao: "2", construtor: "Red Bull R.", pais: "Países Baixos")
 						.frame(maxWidth: .infinity)
+						.fixedSize(horizontal: true, vertical: false)
 					
 					Divider()
-						.frame(width: 1, height: 125)
+						.frame(width: 1, height: alturaDivisoria)
 						.background(.corLinha)
 					
 					Piloto(nomePiloto: "K. Antonelli",podio: true,aoVivo: true,posicao: "3",pais: "Itália")
 						.frame(maxWidth: .infinity)
-						.padding(.trailing, 16)
+						.fixedSize(horizontal: true, vertical: false)
 				}
+				.padding(.horizontal, 16)
 				
 				Text("26/71 voltas")
 					.font(.subheadline)
 					.foregroundStyle(.corSubtitulo)
-					.padding(.bottom, 12)
 			}
 			.frame(maxWidth: .infinity)
 			
 			Image(systemName: "chevron.compact.right")
 				.foregroundStyle(.corLinha)
-				.padding(.trailing, 12)
 				.accessibilityHidden(true)
 		}
 	}
@@ -103,9 +90,8 @@ struct CardCorrida<Destino: View>: View {
 			HStack(alignment: .firstTextBaseline, spacing: 12) {
 				Text("Grande Prêmio - Áustria")
 					.font(.headline)
-					.fixedSize(horizontal: false, vertical: true)
 				
-				Spacer(minLength: 8)
+				Spacer()
 				
 				Image(systemName: "chevron.right")
 					.font(.body.bold())
@@ -116,11 +102,11 @@ struct CardCorrida<Destino: View>: View {
 			Divider()
 			
 			VStack(alignment: .leading, spacing: 16) {
-				linhaPilotoAcessivel(posicao: 1, nome: "G. Russel", construtor: "Mercedes", pais: "Reino Unido")
+				PodioAoVivoAcessivel(posicao: 1, nome: "G. Russel", construtor: "Mercedes", pais: "Reino Unido")
 				
-				linhaPilotoAcessivel(posicao: 2,nome: "M. Verstappen", construtor: "Red Bull R.", pais: "Países Baixos")
+				PodioAoVivoAcessivel(posicao: 2,nome: "M. Verstappen", construtor: "Red Bull R.", pais: "Países Baixos")
 				
-				linhaPilotoAcessivel(posicao: 3, nome: "K. Antonelli", construtor: "Mercedes", pais: "Itália")
+				PodioAoVivoAcessivel(posicao: 3, nome: "K. Antonelli", construtor: "Mercedes", pais: "Itália")
 			}
 			
 			Divider()
@@ -138,43 +124,10 @@ struct CardCorrida<Destino: View>: View {
 				Text("26 de 71 voltas")
 					.font(.headline)
 					.foregroundStyle(.corSubtitulo)
-					.fixedSize(horizontal: false, vertical: true)
 			}
 		}
 		.frame(maxWidth: .infinity, alignment: .leading)
 		.padding(20)
-	}
-	
-	func linhaPilotoAcessivel(posicao: Int, nome: String, construtor: String, pais: String) -> some View {
-		HStack(alignment: .top, spacing: 12) {
-			Text("\(posicao)")
-				.font(.title2.bold())
-				.frame(minWidth: 28, alignment: .leading)
-			
-			Image(nome)
-				.resizable()
-				.scaledToFill()
-				.frame(width: 52, height: 52)
-				.clipShape(Circle())
-				.accessibilityHidden(true)
-			
-			VStack(alignment: .leading, spacing: 4) {
-				Text(nome)
-					.font(.title3.bold())
-					.fixedSize(horizontal: false, vertical: true)
-				
-				Text(construtor)
-					.font(.body)
-					.foregroundStyle(.secondary)
-					.fixedSize(horizontal: false, vertical: true)
-				
-				Text(pais)
-					.font(.body)
-					.foregroundStyle(.secondary)
-					.fixedSize(horizontal: false, vertical: true)
-			}
-		}
-		.frame(maxWidth: .infinity, alignment: .leading)
 	}
 }
 #Preview {

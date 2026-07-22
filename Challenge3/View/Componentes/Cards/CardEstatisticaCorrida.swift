@@ -48,8 +48,7 @@ struct CardEstatisticaCorrida: View {
 				cardPadrao
 			}
 		}
-		.padding(.horizontal, 12)
-		.padding(.bottom, 12)
+		.padding(18)
 		.frame(maxWidth: .infinity)
 		.background(.corCard)
 		.clipShape(RoundedRectangle(cornerRadius: 20))
@@ -57,7 +56,7 @@ struct CardEstatisticaCorrida: View {
 	
 	var cardPadrao: some View {
 		
-		VStack {
+		VStack (spacing: 20){
 			
 			VStack {
 				Text("Grande Prêmio Áustria")
@@ -66,13 +65,10 @@ struct CardEstatisticaCorrida: View {
 				Text("71 voltas - Corrida encerrada")
 					.font(.footnote)
 			}
-			.padding(.top, 20)
-			.padding(.bottom, 20)
 			
 			HStack(spacing: 8) {
 				Piloto(nomePiloto: "G. Russel", podio: true, aoVivo: false, posicao: "1")
 					.frame(maxWidth: .infinity)
-					.padding(.leading, 16)
 				
 				Divider()
 					.frame(width: 1, height: 125)
@@ -87,9 +83,9 @@ struct CardEstatisticaCorrida: View {
 				
 				Piloto(nomePiloto: "K. Antonelli", podio: true, aoVivo: false, posicao: "3", construtor: "Mercedes", tempo: "+ 1,986 s", pais: "Itália")
 					.frame(maxWidth: .infinity)
-					.padding(.trailing, 16)
 			}
-			.padding(.bottom, 20)
+			.padding(.horizontal, 16)
+
 			
 			SubCategoria(titulo: "Classificação do Campeonato", ehSubtitulo: false)
 				.padding(.bottom, 10)
