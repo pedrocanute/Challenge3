@@ -9,10 +9,10 @@ import SwiftUI
 
 struct BarraPosse: View {
 
-	@Environment(\.dynamicTypeSize) private var dynamicTypeSize
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 
-	private let posseBrasil = 69.0
-	private let posseJapao = 31.0
+	let posseBrasil = 69.0
+	let posseJapao = 31.0
 
 	var body: some View {
 		Group {
@@ -23,12 +23,10 @@ struct BarraPosse: View {
 			}
 		}
 		.accessibilityElement(children: .ignore)
-		.accessibilityLabel(
-			"Posse de bola. Brasil: 69 por cento. Japão: 31 por cento."
-		)
+		.accessibilityLabel("Posse de bola. Brasil: 69 por cento. Japão: 31 por cento.")
 	}
 
-	private var barra: some View {
+	var barra: some View {
 		ZStack {
 			Capsule()
 				.fill(.corVermelhoJapao)
@@ -61,44 +59,35 @@ struct BarraPosse: View {
 		.frame(height: 45)
 	}
 
-	private var layoutAcessivel: some View {
+	var layoutAcessivel: some View {
 		VStack(alignment: .leading, spacing: 12) {
 			Text("Posse de bola")
 				.font(.headline)
 
-			valorPosse(
-				pais: "Brasil",
-				valor: posseBrasil,
-				cor: .corVerdeBrasil
-			)
-
-			valorPosse(
-				pais: "Japão",
-				valor: posseJapao,
-				cor: .corVermelhoJapao
-			)
-		}
-		.foregroundStyle(.white)
-	}
-
-	private func valorPosse(
-		pais: String,
-		valor: Double,
-		cor: Color
-	) -> some View {
-		VStack(alignment: .leading, spacing: 8) {
 			HStack {
-				Text(pais)
+				Text("Brasil")
 
 				Spacer()
 
-				Text("\(Int(valor))%")
+				Text("69%")
 					.font(.headline)
 			}
+			ProgressView(value: 69, total: 100)
+				.tint(.corVerdeBrasil)
+			
+			HStack {
+				Text("Japão")
 
-			ProgressView(value: valor, total: 100)
-				.tint(cor)
+				Spacer()
+
+				Text("31%")
+					.font(.headline)
+			}
+			ProgressView(value: 31, total: 100)
+				.tint(.corVermelhoJapao)
+			
 		}
+		.foregroundStyle(.white)
 	}
 }
 

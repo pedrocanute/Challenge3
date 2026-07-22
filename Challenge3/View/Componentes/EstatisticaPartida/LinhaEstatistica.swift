@@ -14,7 +14,7 @@ struct LinhaEstatistica: View {
 	let dadoDireito: String
 	var temDivisoria: Bool = true
 
-	@Environment(\.dynamicTypeSize) private var dynamicTypeSize
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 
 	var body: some View {
 		VStack(spacing: 12) {
@@ -62,27 +62,31 @@ struct LinhaEstatistica: View {
 				.fixedSize(horizontal: false, vertical: true)
 
 			HStack(alignment: .top, spacing: 20) {
-				valorAcessivel(pais: "Brasil", valor: dadoEsquerdo)
+				VStack(alignment: .leading, spacing: 4) {
+					Text("Brasil")
+						.font(.caption)
+						.foregroundStyle(.corSubtitulo)
 
-				Spacer(minLength: 12)
+					Text("51%")
+						.font(.title2.bold())
+						.foregroundStyle(.white)
+				}
 
-				valorAcessivel(pais: "Japão", valor: dadoDireito)
+				Spacer()
+
+				VStack(alignment: .leading, spacing: 4) {
+					Text("Japão")
+						.font(.caption)
+						.foregroundStyle(.corSubtitulo)
+
+					Text("49%")
+						.font(.title2.bold())
+						.foregroundStyle(.white)
+				}
 			}
 		}
 		.frame(maxWidth: .infinity, alignment: .leading)
 		.padding(.vertical, 8)
-	}
-
-	func valorAcessivel(pais: String, valor: String) -> some View {
-		VStack(alignment: .leading, spacing: 4) {
-			Text(pais)
-				.font(.caption)
-				.foregroundStyle(.corSubtitulo)
-
-			Text(valor)
-				.font(.title2.bold())
-				.foregroundStyle(.white)
-		}
 	}
 }
 #Preview {
