@@ -9,12 +9,14 @@ import SwiftUI
 
 struct SubCategoria: View {
 	let titulo: String
+	let fonteTitulo: CGFloat = 20
 	var ehSubtitulo: Bool = true
+	
 	var fonte: Font {
 		if ehSubtitulo {
 			return .subheadline
 		} else {
-			return .custom("Play-Bold", size: 20, relativeTo: .title2)
+			return .custom("Play-Bold", size: fonteTitulo, relativeTo: .title2)
 		}
 	}
 	
@@ -34,7 +36,6 @@ struct SubCategoria: View {
 				
 		}
 		.padding(.top, 14)
-//		.padding(.bottom, 5)
 	}
 }
 #Preview {

@@ -10,6 +10,7 @@ import SwiftUI
 struct IconeCategoria: View {
 	let nomeIcone: String
 	let titulo: String
+	let fonteTitulo: CGFloat = 24
 	var tamanho: CGFloat = 55
 	var cor: Color = .corFutebol
 	
@@ -29,7 +30,7 @@ struct IconeCategoria: View {
 				}
 			
 			Text(titulo)
-				.font(.custom("Play-Bold", size: 24, relativeTo: .title))
+				.font(.custom("Play-Bold", size: fonteTitulo, relativeTo: .title))
 				.foregroundStyle(.white)
 				.padding(.top, 10)
 			
