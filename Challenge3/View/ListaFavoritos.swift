@@ -21,8 +21,14 @@ struct ItemFavorito: Identifiable {
 
 struct ListaFavoritos: View {
 	
+	let margemInternaBuscar: CGFloat = 16
+	let margemExternaBuscar: CGFloat = 16
+	let alturaMaximaSheet: Double = 0.96
+	
 	@State var categorias = [
+		
 		CategoriaFavoritos(nome: "Futebol", itens: [
+			
 			ItemFavorito(nome: "Copa do Mundo 2026", favoritado: true),
 			ItemFavorito(nome: "Champions League", favoritado: false),
 			ItemFavorito(nome: "Premier League", favoritado: false),
@@ -32,9 +38,11 @@ struct ListaFavoritos: View {
 			ItemFavorito(nome: "Copa do Brasil", favoritado: false),
 			ItemFavorito(nome: "Sul-Americana", favoritado: false),
 			ItemFavorito(nome: "Libertadores", favoritado: false)
+			
 		]),
 		
 		CategoriaFavoritos(nome: "Corrida", itens: [
+			
 			ItemFavorito(nome: "Fórmula 1", favoritado: true),
 			ItemFavorito(nome: "Fórmula 2", favoritado: false),
 			ItemFavorito(nome: "Fórmula 3", favoritado: false),
@@ -47,6 +55,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Vôlei", itens: [
+			
 			ItemFavorito(nome: "Liga das Nações", favoritado: false),
 			ItemFavorito(nome: "Campeonato Mundial", favoritado: false),
 			ItemFavorito(nome: "Olimpíadas", favoritado: false),
@@ -56,6 +65,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Boxe", itens: [
+			
 			ItemFavorito(nome: "Pesos Pesados", favoritado: false),
 			ItemFavorito(nome: "Pesos Meio-Pesados", favoritado: false),
 			ItemFavorito(nome: "Pesos Médio", favoritado: false),
@@ -65,6 +75,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Futebol Americano", itens: [
+			
 			ItemFavorito(nome: "NFL", favoritado: false),
 			ItemFavorito(nome: "NCAA Football", favoritado: false),
 			ItemFavorito(nome: "CFL", favoritado: false),
@@ -74,6 +85,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "MMA", itens: [
+			
 			ItemFavorito(nome: "UFC", favoritado: false),
 			ItemFavorito(nome: "PFL", favoritado: false),
 			ItemFavorito(nome: "Bellator", favoritado: false),
@@ -82,6 +94,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Basquete", itens: [
+			
 			ItemFavorito(nome: "NBA", favoritado: false),
 			ItemFavorito(nome: "WNBA", favoritado: false),
 			ItemFavorito(nome: "NBB", favoritado: false),
@@ -90,6 +103,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Golfe", itens: [
+			
 			ItemFavorito(nome: "PGA Tour", favoritado: false),
 			ItemFavorito(nome: "LIV Golf", favoritado: false),
 			ItemFavorito(nome: "Masters Tournament", favoritado: false),
@@ -98,6 +112,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Tênis", itens: [
+			
 			ItemFavorito(nome: "Australian Open", favoritado: false),
 			ItemFavorito(nome: "US Open", favoritado: false),
 			ItemFavorito(nome: "Wimbledon", favoritado: false),
@@ -106,6 +121,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Rugby", itens: [
+			
 			ItemFavorito(nome: "Rugby World Cup", favoritado: false),
 			ItemFavorito(nome: "Six Nations", favoritado: false),
 			ItemFavorito(nome: "Rugby Championship", favoritado: false),
@@ -114,6 +130,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Surf", itens: [
+			
 			ItemFavorito(nome: "WSL Championship Tour", favoritado: false),
 			ItemFavorito(nome: "Challenger Series", favoritado: false),
 			ItemFavorito(nome: "ISA World Surfing Games", favoritado: false),
@@ -122,6 +139,7 @@ struct ListaFavoritos: View {
 		]),
 		
 		CategoriaFavoritos(nome: "Baseball", itens: [
+			
 			ItemFavorito(nome: "MLB", favoritado: false),
 			ItemFavorito(nome: "World Baseball Classic", favoritado: false),
 			ItemFavorito(nome: "NPB (Japão)", favoritado: false),
@@ -145,14 +163,10 @@ struct ListaFavoritos: View {
 					}
 				}
 			}
-			.listStyle(.insetGrouped)
-			.background(.clear)
-			.listSectionSeparator(.hidden)
-			.scrollContentBackground(.hidden)
-
 			.navigationTitle("Favoritos")
 			.navigationBarTitleDisplayMode(.inline)
 			.safeAreaInset(edge: .bottom) {
+				
 					HStack {
 						Image(systemName: "magnifyingglass")
 							.foregroundStyle(.secondary)
@@ -170,16 +184,16 @@ struct ListaFavoritos: View {
 						.buttonStyle(.plain)
 						.accessibilityLabel("Busca por voz")
 					}
-					.padding(.horizontal, 16)
+					.padding(.horizontal, margemInternaBuscar)
 					.frame(height: 50)
 					.background(.thickMaterial)
 					.clipShape(Capsule())
-					.padding(.horizontal, 16)
+					.padding(.horizontal, margemExternaBuscar)
 					.padding(.bottom, 8)
 
 				}
 		}
-		.presentationDetents([.medium, .fraction(0.96)])
+		.presentationDetents([.medium, .fraction(alturaMaximaSheet)])
 		.presentationDragIndicator(.visible)
 		
 	}

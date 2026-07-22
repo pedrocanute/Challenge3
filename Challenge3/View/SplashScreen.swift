@@ -9,13 +9,9 @@ import SwiftUI
 
 struct SplashScreen: View {
 	
-	@State private var escalaLogo: CGFloat = 0.55
-	@State private var opacidadeLogo: Double = 0
-	@State private var deslocamentoLogo: CGFloat = 45
-	@State private var rotacaoAnel: Double = -40
-	@State private var escalaBrilho: CGFloat = 0.65
-	@State private var opacidadeBrilho: Double = 0
-	@State private var mostrarParticulas = false
+	@State var escalaLogo: CGFloat = 0.55
+	@State var opacidadeLogo: Double = 0
+	@State var deslocamentoLogo: CGFloat = 45
 	
 	var body: some View {
 		ZStack {
