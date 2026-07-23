@@ -8,8 +8,7 @@ import SwiftUI
 
 struct CardEventoCorrida: View {
 
-	
-	@Environment(\.dynamicTypeSize) private var dynamicTypeSize
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 	
 	var body: some View {
 		
@@ -28,7 +27,6 @@ struct CardEventoCorrida: View {
 	var cardPadrao: some View {
 		
 		VStack {
-			
 			
 			Group {
 				
