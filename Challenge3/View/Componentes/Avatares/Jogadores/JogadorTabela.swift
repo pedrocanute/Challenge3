@@ -11,12 +11,13 @@ struct JogadorTabela: View {
 	let corFundo: Color
 	let amarelo: Bool
 	let fezGol: Bool
+	let tamanhoCirculo: CGFloat = 34
 
 	var body: some View {
 		Image(nomeJogador)
 			.resizable()
 			.aspectRatio(contentMode: .fit)
-			.frame(width: 34, height: 34)
+			.frame(width: tamanhoCirculo, height: tamanhoCirculo)
 			.background(corFundo)
 			.clipShape(Circle())
 			.overlay(alignment: .topLeading) {

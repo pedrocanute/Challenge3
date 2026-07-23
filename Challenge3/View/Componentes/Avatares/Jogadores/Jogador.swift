@@ -10,6 +10,8 @@ struct Jogador: View {
 	let nomeJogador: String
 	let numeroCamisa: String
 	let corFundo: Color
+	let tamanhoCirculo: CGFloat = 34
+	let offsetNumeroCamisa: CGFloat = -18
 	var body: some View {
 		VStack{
 			Image(nomeJogador)
@@ -17,12 +19,12 @@ struct Jogador: View {
 				.aspectRatio(contentMode: .fit)
 				.background(corFundo)
 				.clipShape(Circle())
-				.frame(width: 34, height: 34)
+				.frame(width: tamanhoCirculo, height: tamanhoCirculo)
 				.overlay(alignment: .topLeading) {
 					Text(numeroCamisa)
 						.font(.subheadline)
 						.foregroundStyle(.white)
-						.offset(x: -18)
+						.offset(x: offsetNumeroCamisa)
 				}
 			Text(nomeJogador)
 				.font(.footnote)
