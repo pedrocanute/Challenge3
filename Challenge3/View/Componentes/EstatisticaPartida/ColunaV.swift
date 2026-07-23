@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ColunaV: View {
 	let pilotos: [InfoPiloto]
+	let alturaDaLinha: CGFloat = 45
+
 	var body: some View {
 		VStack(alignment: .leading) {
 			Text("V")
@@ -18,7 +20,7 @@ struct ColunaV: View {
 			ForEach(pilotos) { piloto in
 				Text("\(piloto.vitorias)")
 					.font(.subheadline)
-					.frame(height: 45)
+					.frame(height: alturaDaLinha)
 			}
 		}
 	}

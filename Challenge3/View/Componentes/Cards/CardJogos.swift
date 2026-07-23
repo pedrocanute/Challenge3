@@ -18,7 +18,7 @@ struct CardJogos<Destino: View>: View {
 
 	let destino: () -> Destino
 
-	@Environment(\.dynamicTypeSize) private var dynamicTypeSize
+	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 	@State private var ativarHaptic = false
 
 	var body: some View {
@@ -35,12 +35,7 @@ struct CardJogos<Destino: View>: View {
 			.frame(maxWidth: .infinity)
 			.background(.corCard)
 			.clipShape(RoundedRectangle(cornerRadius: 20))
-			.shadow(
-				color: .black.opacity(0.45),
-				radius: 2,
-				x: 0,
-				y: 3
-			)
+			.shadow(color: .black.opacity(0.45),radius: 2,x: 0,y: 3)
 			.padding(.bottom, 6)
 		}
 		.simultaneousGesture(
@@ -120,6 +115,14 @@ struct CardJogos<Destino: View>: View {
 					Text("Ao vivo")
 						.font(.headline)
 						.foregroundStyle(.red)
+
+				} else if finalizada {
+					Image(systemName: "checkmark.circle.fill")
+						.accessibilityHidden(true)
+
+					Text("Encerrada — 0 x 1")
+						.font(.headline)
+
 				} else {
 					Image(systemName: "clock")
 						.accessibilityHidden(true)
@@ -136,6 +139,10 @@ struct CardJogos<Destino: View>: View {
 	var labelAcessibilidade: String {
 		if aoVivo {
 			return "\(titulo). \(paisEsquerda) contra \(paisDireita). Partida ao vivo."
+		}
+
+		if finalizada {
+			return "\(titulo). Partida encerrada. \(paisEsquerda), zero. \(paisDireita), um."
 		}
 
 		return "\(titulo). \(paisEsquerda) contra \(paisDireita), às \(horario)."

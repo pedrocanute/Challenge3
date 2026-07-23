@@ -15,30 +15,10 @@ struct Construcao: View {
 				.ignoresSafeArea()
 			VStack{
 				
-//				Image(systemName: "wrench.and.screwdriver")
-//					.font(.largeTitle)
-//					.foregroundStyle(.corFundo)
-//					.background(
-//						Circle()
-//							.foregroundStyle(.corFutebol)
-//							.frame(width: 100, height: 100)
-//					)
-//					.padding(.bottom, 40)
 				Text("Tela indisponível. Confira a tela disponível abaixo")
 					.font(.title3)
 					.frame(width: 250)
 					.multilineTextAlignment(.center)
-
-					
-				
-				
-				
-//				Text("Confira a tela disponível abaixo")
-//					.font(.headline)
-//					.frame(width: 250)
-//					.multilineTextAlignment(.center)
-//					.lineLimit(2)
-//					.padding(.bottom, 20)
 				
 				BotaoEsporte(titulo: "Futebol", icone: "Futebol", cor: .corFutebol) { Futebol()}
 				

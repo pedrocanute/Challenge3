@@ -10,7 +10,7 @@ import SwiftUI
 struct ColunaDireitaEsporte: View {
 	var body: some View {
 		VStack (spacing: 20){
-			BotaoEsporte(titulo: "Corrida", icone: "Corrida", cor: .corBasquete) { Futebol () }
+			BotaoEsporte(titulo: "Corrida", icone: "Corrida", cor: .corBasquete) { Formula1() }
 			BotaoEsporte(titulo: "MMA", icone: "MMA", cor: .corMMA) { Construcao() }
 				
 			BotaoEsporte(titulo: "Tênis", icone: "Tenis", cor: .corTenis) { Construcao() }

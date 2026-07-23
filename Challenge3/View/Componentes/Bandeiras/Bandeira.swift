@@ -10,12 +10,15 @@ import SwiftUI
 struct Bandeira: View {
 	let nomeSelecao: String
 	var ehCorrida: Bool = false
+	let tamanhoCirculoCorrida: CGFloat = 19
+	let tamanhoCirculoCopa: CGFloat = 50
+	
 	var body: some View {
 		if ehCorrida {
 			Image(nomeSelecao)
 				.resizable()
 				.scaledToFill()
-				.frame(width: 19, height: 19)
+				.frame(width: tamanhoCirculoCorrida, height: tamanhoCirculoCorrida)
 				.clipShape(Circle())
 		} else {
 			VStack(spacing: 4){
@@ -23,7 +26,7 @@ struct Bandeira: View {
 				Image(nomeSelecao)
 					.resizable()
 					.scaledToFill()
-					.frame(width: 50, height: 50)
+					.frame(width: tamanhoCirculoCopa, height: tamanhoCirculoCopa)
 					.clipShape(Circle())
 				
 				Text(nomeSelecao)

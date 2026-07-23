@@ -13,6 +13,7 @@ struct LinhaEstatistica: View {
 	let titulo: String
 	let dadoDireito: String
 	var temDivisoria: Bool = true
+	let margemInterna: CGFloat = 12
 
 	@Environment(\.dynamicTypeSize) var dynamicTypeSize
 
@@ -51,7 +52,7 @@ struct LinhaEstatistica: View {
 				.frame(width: 60, alignment: .trailing)
 		}
 		.foregroundStyle(.white)
-		.padding(.horizontal,12)
+		.padding(.horizontal, margemInterna)
 	}
 
 	var layoutAcessivel: some View {
